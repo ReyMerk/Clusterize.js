@@ -235,6 +235,9 @@
       if(top_offset < 1) {
         rows_above++;
       }
+      if(items_end > rows_len)
+         if (opts.callbacks.last_cluster_load)
+            opts.callbacks.last_cluster_load();
       for (var i = items_start; i < items_end; i++) {
         rows[i] && this_cluster_rows.push(rows[i]);
       }
